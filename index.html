@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Kepribadian Modern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="header">
+            <h1 id="mainTitle">PsikoTest v1.0</h1>
+            <div class="progress-container hidden" id="progressBox">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+
+        <div id="setup-box">
+            <div class="character-box">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" class="floating">
+            </div>
+            <h2>Selamat Datang!</h2>
+            <p style="margin-bottom: 15px; color: #666;">Masukkan namamu untuk memulai kuis.</p>
+            <input type="text" id="usernameInput" placeholder="Nama Lengkap..." autocomplete="off">
+            <button onclick="startQuiz()" class="btn-start">Mulai Analisis 🚀</button>
+        </div>
+
+        <div id="quiz-box" class="hidden">
+            <div class="character-box">
+                <img src="" alt="Character" id="charImg" class="floating">
+            </div>
+            <h2 id="question">Memuat Pertanyaan...</h2>
+            <div id="answers" class="btn-grid"></div>
+        </div>
+
+        <div id="result-box" class="hidden">
+            <div id="printable-area">
+                <div class="character-box">
+                    <img src="" id="resultImg" style="width: 150px;">
+                </div>
+                <h2 id="greeting">Halo!</h2>
+                <div class="result-badge">Hasil Kepribadian Anda:</div>
+                <h1 id="result-title">Tipe</h1>
+                <p id="result-desc">Deskripsi</p>
+                <hr style="margin: 20px 0; border: 0; border-top: 1px dashed #ccc;">
+                <p style="font-size: 0.8rem; color: #888;">Dicetak secara otomatis oleh PsikoTest System</p>
+            </div>
+            
+            <div class="action-buttons">
+                <button onclick="downloadPDF()" class="btn-pdf">📥 Simpan Sebagai PDF</button>
+                <button onclick="location.reload()" class="btn-restart">Ulangi Kuis</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
